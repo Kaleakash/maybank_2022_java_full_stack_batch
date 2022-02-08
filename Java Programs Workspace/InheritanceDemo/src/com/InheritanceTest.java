@@ -6,7 +6,7 @@ public class InheritanceTest {
 //	Employee emp = new Employee();
 //	emp.readEmp();
 //	emp.disEmp();
-		Employee emp = new Employee();
+		//Employee emp = new Employee();
 		Manager mgr = new Manager();
 		System.out.println("Enter Manager Details");
 		mgr.readMgr();
