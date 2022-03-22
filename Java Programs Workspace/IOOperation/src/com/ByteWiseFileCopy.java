@@ -16,8 +16,8 @@ public class ByteWiseFileCopy {
 		}
 		
 		System.out.println("File copied..");
-		fis.close();
-		fos.close();
+		//fis.close();
+		//fos.close();
 	}
 
 }
