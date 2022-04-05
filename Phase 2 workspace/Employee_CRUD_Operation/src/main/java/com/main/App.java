@@ -9,19 +9,52 @@ public class App {
 
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
-	System.out.println("enter the id");
-	int id = sc.nextInt();
-	System.out.println("enter the name");
-	String name = sc.next();
-	System.out.println("enter the salary");
-	float salary = sc.nextFloat();
-	Employee emp = new Employee();
-	emp.setId(id);
-	emp.setName(name);
-	emp.setSalary(salary);
+	String con="";
+	int id;
+	String name;
+	float salary;
+	String res;
 	EmployeeService es = new EmployeeService();
-	String res = es.storeEmployee(emp);
-	System.out.println(res);
+	do {
+			System.out.println("1:Add 2: Update 3:Delete");
+			System.out.println("Enter your choice");
+			int choice = sc.nextInt();
+			switch(choice) {
+			case 1:	System.out.println("Enter the id");
+			        id = sc.nextInt();
+			        System.out.println("Enter the name");
+			        name = sc.next();
+			        System.out.println("Enter the salary");
+			        salary = sc.nextFloat();
+			        Employee emp = new Employee();
+			        emp.setId(id);
+			        emp.setName(name);
+			        emp.setSalary(salary);
+			        res = es.storeEmployee(emp);
+			        System.out.println(res);
+					break;
+			case 2:  System.out.println("Enter the id ");
+			         id = sc.nextInt();
+			         System.out.println("Enter the salary");
+			         salary = sc.nextFloat();
+			         Employee emp1 = new Employee();
+			         emp1.setId(id);
+			         emp1.setSalary(salary);
+			         res = es.updateEmployee(emp1);
+			         System.out.println(res);
+					break;
+			case 3: System.out.println("Enter the id to delete the record");
+			        id = sc.nextInt();
+			        res = es.deleteEmloyee(id);
+			        System.out.println(res);
+					break;
+			default : System.out.println("wrong choice");
+			         break;
+			}
+			System.out.println("do you want to continue?(y/n)");
+			con = sc.next();
+	}while(con.equalsIgnoreCase("y"));
+	System.out.println("Thank you Visit Again!");
 	}
 
 }
