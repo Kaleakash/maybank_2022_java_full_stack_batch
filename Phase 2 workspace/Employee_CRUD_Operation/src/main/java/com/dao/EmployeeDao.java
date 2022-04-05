@@ -3,6 +3,9 @@ package com.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.bean.Employee;
 
@@ -51,4 +54,27 @@ return res;
 			return 0;
 		}
 	}
+	
+	
+	public List<Employee> findAllEmployee() {
+		List<Employee> listOfEmp = new ArrayList<>();
+		try {
+Class.forName("com.mysql.cj.jdbc.Driver");
+Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/maybank?useSSL=false", "root", "root@123");
+PreparedStatement pstmt = con.prepareStatement("select * from employee");
+ResultSet rs = pstmt.executeQuery();
+	while(rs.next()) {
+		Employee emp = new Employee();				// convert query into objects. 
+		emp.setId(rs.getInt(1));
+		emp.setName(rs.getString(2));
+		emp.setSalary(rs.getFloat(3));
+		listOfEmp.add(emp);
+		}
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return listOfEmp;
+	}
+	
 }

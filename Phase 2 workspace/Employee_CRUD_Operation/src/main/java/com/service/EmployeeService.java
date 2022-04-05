@@ -1,5 +1,7 @@
 package com.service;
 
+import java.util.List;
+
 import com.bean.Employee;
 import com.dao.EmployeeDao;
 
@@ -33,4 +35,10 @@ public class EmployeeService {
 			return "Record not present";
 		}
 	}
+	
+	public List<Employee> getAllEmloyee() {
+		return ed.findAllEmployee();
+	}
+	
+	
 }
