@@ -1,5 +1,6 @@
 package com.service;
 
+import java.util.Iterator;
 import java.util.List;
 
 import com.bean.Employee;
@@ -37,6 +38,15 @@ public class EmployeeService {
 	}
 	
 	public List<Employee> getAllEmloyee() {
+		// we check the condition and base upon condition we will update salary for particular month. 
+//		List<Employee> listOfEmloyee = ed.findAllEmployee();
+//		Iterator<Employee> li = listOfEmloyee.iterator();
+//		while(li.hasNext()) {
+//			Employee emp = li.next();
+//			emp.setSalary(emp.getSalary()+1000);
+//		}
+//		
+//		return listOfEmloyee;
 		return ed.findAllEmployee();
 	}
 	
