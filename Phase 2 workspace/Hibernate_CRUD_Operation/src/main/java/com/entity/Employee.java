@@ -1,11 +1,14 @@
-package com.bean;
+package com.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class Employee {
+@Id
 private int id;
 private String name;
 private float salary;
-
 public int getId() {
 	return id;
 }
@@ -34,5 +37,6 @@ public Employee() {
 	super();
 	// TODO Auto-generated constructor stub
 }
+
 
 }

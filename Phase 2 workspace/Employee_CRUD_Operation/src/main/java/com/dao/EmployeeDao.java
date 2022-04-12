@@ -69,7 +69,10 @@ ResultSet rs = pstmt.executeQuery();
 		listOfEmp.add(emp);
 		}
 
-		} catch (Exception e) {
+		} catch(SQLIntegrityConstraintViolationException e) {
+			
+			
+		}catch (Exception e) {
 			System.out.println(e);
 		}
 		return listOfEmp;
