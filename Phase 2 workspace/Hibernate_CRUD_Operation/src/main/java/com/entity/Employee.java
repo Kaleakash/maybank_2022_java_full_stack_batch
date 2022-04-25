@@ -1,12 +1,16 @@
 package com.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
+@Entity					// class Employee Table Employee 
+//@Table(name = "EmployeeDetails")			// if table is a different then we have to @Table annotation 
 public class Employee {
 @Id
-private int id;
+//@Column(name = "empid")
+private int id;							// varaible name is id and column name is empId
 private String name;
 private float salary;
 public int getId() {
