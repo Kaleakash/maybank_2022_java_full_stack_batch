@@ -1,5 +1,7 @@
 package com.service;
 
+import java.util.List;
+
 import com.dao.EmployeeDao;
 import com.entity.Employee;
 
@@ -34,4 +36,19 @@ public class EmployeeService {
 			return "Record not present";
 		}
 	}
+	
+	public String findEmployeeById(int id) {
+			Employee e = ed.findEmployeeById(id);
+			if(e==null) {
+				return "No record found";
+			}else {
+				String msg = "id is "+e.getId()+" Name is "+e.getName()+" Salary is "+e.getSalary();
+				return msg;
+			}
+	}
+	
+	public List<Employee> findAllEmployee() {
+		return ed.findAllEmployee();
+	}
+	
 }

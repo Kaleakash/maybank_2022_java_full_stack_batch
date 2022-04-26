@@ -1,5 +1,7 @@
 package com.main;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 import com.entity.Employee;
@@ -17,7 +19,7 @@ public class App {
 		int choice;
 		String res;
 		do {
-			System.out.println("1: Add Employee 2: Update Salary 3: Delete Employee");
+			System.out.println("1: Add Employee 2: Update Salary 3: Delete Employee 4: Search Employee record 5: Find All records");
 			System.out.println("Plz enter your choice");
 			choice = sc.nextInt();
 			switch (choice) {
@@ -45,6 +47,18 @@ public class App {
 			        id = sc.nextInt();
 			        res = es.deleteEmployeeInfo(id);
 			        System.out.println(res);
+			        break;
+			case 4: System.out.println("Plz enter the id to search the employee by id");
+			        id = sc.nextInt();
+			        res = es.findEmployeeById(id);
+			        System.out.println(res);
+			        break;
+			case 5: List<Employee> listOfEmp = es.findAllEmployee();
+			        Iterator<Employee> li = listOfEmp.iterator();
+			        while(li.hasNext()) {
+			        	Employee e= li.next();
+			        	System.out.println("id is "+e.getId()+" Name is "+e.getName()+" Salary is "+e.getSalary());
+			        }
 			        break;
 			default:System.out.println("Wrong choice");
 				break;
