@@ -17,7 +17,7 @@ public class App {
 		int choice;
 		String res;
 		do {
-			System.out.println("1: Add Employee ");
+			System.out.println("1: Add Employee 2: Update Salary 3: Delete Employee");
 			System.out.println("Plz enter your choice");
 			choice = sc.nextInt();
 			switch (choice) {
@@ -31,7 +31,21 @@ public class App {
 			         res = es.storeEmployee(e1);
 			         System.out.println(res);
 				break;
-
+			case 2: System.out.println("Enter the id");
+			        id = sc.nextInt();
+			        System.out.println("Enter the salary");
+			        salary = sc.nextFloat();
+			        Employee e2 = new Employee();
+			        e2.setId(id);
+			        e2.setSalary(salary);
+			        res = es.updateEmployeeSalary(e2);
+			        System.out.println(res);
+			        break;
+			case 3: System.out.println("Enter the id to delete the record");
+			        id = sc.nextInt();
+			        res = es.deleteEmployeeInfo(id);
+			        System.out.println(res);
+			        break;
 			default:System.out.println("Wrong choice");
 				break;
 			}

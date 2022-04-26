@@ -18,4 +18,20 @@ public class EmployeeService {
 		}
 		
 	}
+	
+	public String updateEmployeeSalary(Employee emp) {
+		if(ed.updateEmployeeSalary(emp)>0) {
+			return "Record updated successfully";
+		}else {
+			return "Record not present";
+		}
+	}
+	
+	public String deleteEmployeeInfo(int id) {
+		if(ed.deleteEmployeeInfo(id)>0) {
+			return "Record deleted successsfully";
+		}else {
+			return "Record not present";
+		}
+	}
 }

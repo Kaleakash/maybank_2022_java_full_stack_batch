@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity					// class Employee Table Employee 
-//@Table(name = "EmployeeDetails")			// if table is a different then we have to @Table annotation 
+@Table(name = "employee")			// if table is a different then we have to @Table annotation 
 public class Employee {
 @Id
 //@Column(name = "empid")

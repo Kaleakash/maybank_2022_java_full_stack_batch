@@ -26,4 +26,48 @@ public class EmployeeDao {
 			return 0;
 		}
 	}
+	
+	
+	public int updateEmployeeSalary(Employee emp) {
+		
+			Configuration con  = new Configuration();
+			con.configure("hibernate.cfg.xml");
+			SessionFactory sf = con.buildSessionFactory();	// it like a connecton reference. 
+			Session session = sf.openSession();			// it is like a Statement and PreparedStatement 
+			Transaction tran = session.getTransaction();
+						
+			Employee e=	session.get(Employee.class, emp.getId());
+			if(e==null) {
+				return 0;
+			}else {
+					tran.begin();
+					float newSalary = emp.getSalary();
+					e.setSalary(newSalary);			//updated new salary 	
+						session.update(e);					// update query executed internally 
+					tran.commit();
+					return 1;
+			}
+	}
+	
+	
+	public int deleteEmployeeInfo(int id) {
+		
+		Configuration con  = new Configuration();
+		con.configure("hibernate.cfg.xml");
+		SessionFactory sf = con.buildSessionFactory();	// it like a connecton reference. 
+		Session session = sf.openSession();			// it is like a Statement and PreparedStatement 
+		Transaction tran = session.getTransaction();
+					
+		Employee e=	session.get(Employee.class, id);
+		if(e==null) {
+			return 0;
+		}else {
+				tran.begin();
+					session.delete(e);                     // delete query execute internally 
+				tran.commit();
+				return 1;
+		}
+	}
+	
+	
 }
