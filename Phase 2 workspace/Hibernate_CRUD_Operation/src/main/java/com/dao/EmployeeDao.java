@@ -92,8 +92,9 @@ public class EmployeeDao {
 		SessionFactory sf = con.buildSessionFactory();	// it like a connecton reference. 
 		Session session = sf.openSession();	
 	    //Query qry= session.createQuery("select emp from Employee emp");
-		Query qry= session.createQuery("select emp from Employee emp where emp.id = 1");
-	    List<Employee> listOfEmp = qry.list();
+		//Query qry= session.createQuery("select e from Employee e where e.id = 1");
+		Query qry= session.createQuery("select e from Employee e where e.salary > 20000");
+		List<Employee> listOfEmp = qry.list();
 	    return listOfEmp;
 	}
 }
