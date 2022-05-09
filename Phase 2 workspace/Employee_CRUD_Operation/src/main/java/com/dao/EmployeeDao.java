@@ -59,7 +59,7 @@ return res;
 		List<Employee> listOfEmp = new ArrayList<>();
 		try {
 			Connection con =DbResource.getDbConnection();
-PreparedStatement pstmt = con.prepareStatement("select * from employee");
+			PreparedStatement pstmt = con.prepareStatement("select * from employee");
 ResultSet rs = pstmt.executeQuery();
 	while(rs.next()) {
 		Employee emp = new Employee();				// convert query into objects. 

@@ -91,7 +91,8 @@ public class EmployeeDao {
 		con.configure("hibernate.cfg.xml");
 		SessionFactory sf = con.buildSessionFactory();	// it like a connecton reference. 
 		Session session = sf.openSession();	
-	    Query qry= session.createQuery("select emp from Employee emp");
+	    //Query qry= session.createQuery("select emp from Employee emp");
+		Query qry= session.createQuery("select emp from Employee emp where emp.id = 1");
 	    List<Employee> listOfEmp = qry.list();
 	    return listOfEmp;
 	}
