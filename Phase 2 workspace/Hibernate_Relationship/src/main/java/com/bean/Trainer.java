@@ -2,17 +2,21 @@ package com.bean;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Trainer")
 public class Trainer {
 @Id
 private int tid;
 private String tname;
 private String tech;
-@OneToMany(mappedBy = "tsid")			// mapped by to FK ie tsid 
+// Through Trainer object we can store student details also (insert, delete, update and retreive)
+@OneToMany(mappedBy = "tsid",cascade = CascadeType.ALL)			// mapped by to FK ie tsid 
 private List<Student> listOfStd;
 public int getTid() {
 	return tid;

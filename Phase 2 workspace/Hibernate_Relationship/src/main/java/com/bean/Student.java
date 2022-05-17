@@ -2,8 +2,10 @@ package com.bean;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Student")
 public class Student {
 @Id
 private int sid;
