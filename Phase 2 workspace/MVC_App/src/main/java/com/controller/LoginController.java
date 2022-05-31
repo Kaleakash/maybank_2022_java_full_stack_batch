@@ -1,4 +1,4 @@
-package com;
+package com.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,16 +8,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bean.Login;
+
 /**
- * Servlet implementation class Demo
+ * Servlet implementation class LoginController
  */
-public class Demo extends HttpServlet {
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Demo() {
+    public LoginController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,10 +30,6 @@ public class Demo extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.out.println("Welcome to Servlet ");  // it will display output on server side console.
-		PrintWriter pw = response.getWriter();
-		pw.println("Welcome to Servlet program on browser");		// This output display on browser. 
-		// if we write any jdbc or hibernate code in doGet 
 	}
 
 	/**
@@ -40,6 +38,16 @@ public class Demo extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		PrintWriter pw  = response.getWriter();
+		
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		
+		Login ll = new Login();
+		ll.setEmail(email);
+		ll.setPassword(password);
+		
+		
 	}
 
 }
