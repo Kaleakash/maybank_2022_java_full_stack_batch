@@ -8,7 +8,7 @@
 </head>
 <body>
 <h2>Login Page</h2>
-<form action="">
+<form action="LoginController" method="get">
 	<label>Email</label>
 	<input type="email" name="email"/><br/>
 	<label>Password</label>

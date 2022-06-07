@@ -8,12 +8,12 @@
 </head>
 <body>
 <h2>Account Create</h2>
-<form action="">
+<form action="LoginController" method="post">
 	<label>Email</label>
 	<input type="email" name="email"/><br/>
 	<label>Password</label>
 	<input type="password" name="password"/><br/>
-	<input type="submit" value="signIn"/>
+	<input type="submit" value="signUp"/>
 	<input type="reset" value="reset"/>
 </form>
 <br/>

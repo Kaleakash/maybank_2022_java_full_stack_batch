@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>MVC Application</h2>
-	<%@include file="signIn.jsp" %>
+<%
+	out.println("Welcome to Home Page");
+%>
 </body>
 </html>
