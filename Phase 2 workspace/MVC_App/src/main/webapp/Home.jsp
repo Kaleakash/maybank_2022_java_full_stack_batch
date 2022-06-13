@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="addProduct.jsp">Add Product</a>
+<a href="ProductController">Display Product</a>
+<br/>
 <%
 	out.println("Welcome to Home Page");
 %>
