@@ -9,6 +9,8 @@
 <body>
 <a href="addProduct.jsp">Add Product</a>
 <a href="ProductController">Display Product</a>
+<a href="deleteProduct.jsp">Delete Product</a>
+<a href="updateProduct.jsp">Update Product</a>
 <br/>
 <%
 	out.println("Welcome to Home Page");

@@ -30,4 +30,26 @@ public class ProductService {
 		}
 		return listOfProdut;
 	}
+	
+	public String updateProductPrice(Product product) {
+		
+			Product p = pd.findProductById(product.getPid());
+			if(p==null) {
+				return "Product not present";
+			}else if(p.getPrice()==product.getPrice()) {
+				return "Price is same didn't update";
+			}else if(pd.updateProduct(product)>0) {
+				return "Product updated successfully";
+			}else {
+				return "Product didn't update";
+			}
+	}
+	
+	public String deleteProductUsingId(int pid) {
+			if(pd.deleteProduct(pid)>0) {
+				return "Produt deleted successfully";
+			}else {
+				return "Product not present";
+			}
+	}
 }

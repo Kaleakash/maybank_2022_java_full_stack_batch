@@ -30,7 +30,50 @@ public class ProductDao {
 		}
 	}
 	
+	public int updateProduct(Product product) {
+		
+			Configuration con = new Configuration();
+			con.configure("hibernate.cfg.xml");
+			SessionFactory sf = con.buildSessionFactory();
+			Session session = sf.openSession();
+			Transaction tran = session.getTransaction();
+			Product p =session.get(Product.class, product.getPid());
+			if(p==null) {
+				return 0;
+			}else {
+				tran.begin();
+					p.setPrice(product.getPrice());
+					session.update(p);     // update the product 
+				tran.commit();
+				return 1;
+			}
+	}
 	
+	public Product findProductById(int pid) {
+		Configuration con = new Configuration();
+		con.configure("hibernate.cfg.xml");
+		SessionFactory sf = con.buildSessionFactory();
+		Session session = sf.openSession();
+		Product p =session.get(Product.class, pid);
+		return p;
+	}
+	
+	public int deleteProduct(int pid) {
+		Configuration con = new Configuration();
+		con.configure("hibernate.cfg.xml");
+		SessionFactory sf = con.buildSessionFactory();
+		Session session = sf.openSession();
+		Transaction tran = session.getTransaction();
+		Product p =session.get(Product.class, pid);
+		if(p==null) {
+			return 0;
+		}else {
+			tran.begin();
+				session.delete(p);    // delete the product 
+			tran.commit();
+			return 1;
+		}
+}
 	public List<Product> getAllProduct() {
 		Configuration con = new Configuration();
 		con.configure("hibernate.cfg.xml");
