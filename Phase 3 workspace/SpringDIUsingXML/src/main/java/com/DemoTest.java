@@ -29,7 +29,7 @@ public class DemoTest {
 //		e6.displayEmployee();
 		Employee e7 = (Employee)ac.getBean("employee");
 		e7.displayEmployee();
-		
+	
 		Address a1 = (Address)ac.getBean("add");
 		System.out.println("City is "+a1.getCity());
 		System.out.println("State is "+a1.getState());
