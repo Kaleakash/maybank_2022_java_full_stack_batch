@@ -27,6 +27,17 @@ public class ProductDaoJdbcTemplate {
 		}
 	}
 	
+	
+	public int updateProduct(Product product) {
+		try {
+	return jdbcTemplate.update("update Product p set p.price = ? where p.pid = ?", product.getPrice(),product.getPid());
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		return 0;
+		}
+	}
+	
 	public List<Product> getAllProduct() {
 		try {
 			MyRowMapper mrp = new MyRowMapper();
