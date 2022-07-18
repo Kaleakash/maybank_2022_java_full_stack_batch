@@ -17,6 +17,16 @@ public class MyController {
 					mav.setViewName("display.jsp");
 					return mav;
 		}
+		
+		@RequestMapping(value = "hi",method = RequestMethod.GET)
+		public ModelAndView sayHi() {
+					// coding....
+					System.out.println("I Came Here");
+					ModelAndView mav = new ModelAndView();
+					mav.setViewName("displayInfo.jsp");
+					return mav;
+		}
+		
 		@RequestMapping(value = "checkUser",method = RequestMethod.POST)
 		public ModelAndView checkUserDetails(HttpServletRequest req) {      // DI for Request object. 
 			
