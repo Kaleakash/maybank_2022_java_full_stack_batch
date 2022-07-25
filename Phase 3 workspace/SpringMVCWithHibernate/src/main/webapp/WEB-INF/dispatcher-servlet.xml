@@ -20,6 +20,7 @@
 	<property name="annotatedClasses">
 		<list>
 			<value>com.bean.Login</value>
+			<value>com.bean.Product</value>
 		</list>
 	</property>
 	

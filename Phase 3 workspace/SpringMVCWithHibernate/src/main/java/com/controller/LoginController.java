@@ -30,4 +30,18 @@ public class LoginController {
 		}
 		return mav;
 	}
+	
+	@RequestMapping(value = "storeLoginDetails",method=RequestMethod.POST)
+	public ModelAndView signUp(HttpServletRequest req,Login ll) {
+		String email = req.getParameter("email");
+		String password = req.getParameter("password");
+		ll.setEmail(email);
+		ll.setPassword(password);
+		
+		String result = loginService.signUp(ll);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("index.jsp");
+		mav.addObject("msg", result);
+		return mav;
+	}
 }

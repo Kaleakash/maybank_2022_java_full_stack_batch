@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-${requestScope.msg}
-<form action="checkLoginDetails" method="post">
+<h2>Account Create</h2>
+<form action="storeLoginDetails" method="post">
 	<label>Email</label>
 	<input type="email" name="email"><br/>
 	<label>Password</label>
@@ -16,7 +16,8 @@ ${requestScope.msg}
 	<input type="submit" value="submit"/>
 	<input type="reset" value="reset"/>
 </form>
-<br/>
-<a href="signUp.jsp">SignUp</a>
 </body>
+
+<label>Date</label>
+<input type="text" name="date"/>
 </html>

@@ -8,5 +8,6 @@
 </head>
 <body>
 <h2>Successfully login</h2>
+<a href="addProduct.jsp">Add Produt</a>
 </body>
 </html>

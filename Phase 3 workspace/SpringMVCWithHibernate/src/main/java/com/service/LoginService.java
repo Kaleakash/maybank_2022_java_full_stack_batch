@@ -19,4 +19,12 @@ public class LoginService {
 			return "failure";
 		}
 	}
+	
+	public String signUp(Login login) {
+		if(loginDao.signUp(login)>0) {
+			return "account created successfully";
+		}else {
+			return "account didn't create";
+		}
+	}
 }
