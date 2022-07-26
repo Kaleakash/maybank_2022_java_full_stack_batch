@@ -17,17 +17,34 @@ public class LoginController {
 	public ModelAndView signIn(HttpServletRequest req, Login ll) {
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
-		ll.setEmail(email);
-		ll.setPassword(password);
+		String typeOfUser = req.getParameter("typeOfUser");
 		
-		String result = loginService.signIn(ll);
 		ModelAndView mav = new ModelAndView();
-	
-		if(result.equals("success")) {
-				mav.setViewName("success.jsp");
-		}else {			
-			mav.setViewName("failure.jsp");
+		
+		if(typeOfUser.equals("admin")) {
+			
+			String result = loginService.checkAdminLogin(ll);
+			if(result.equals("success")) {
+				mav.setViewName("adminHome.jsp");
+			}else {
+				mav.setViewName("failure.jsp");
+			}
+			
+		}else {
+		
+			ll.setEmail(email);
+			ll.setPassword(password);
+			
+			String result = loginService.signIn(ll);
+		
+			if(result.equals("success")) {
+					mav.setViewName("userHome.jsp");
+			}else {			
+				mav.setViewName("failure.jsp");
+			}
+			
 		}
+		
 		return mav;
 	}
 	

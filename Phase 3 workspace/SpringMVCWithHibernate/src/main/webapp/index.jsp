@@ -9,10 +9,14 @@
 <body>
 ${requestScope.msg}
 <form action="checkLoginDetails" method="post">
-	<label>Email</label>
+	<label>Email</label> &nbsp;&nbsp;&nbsp;
 	<input type="email" name="email"><br/>
 	<label>Password</label>
 	<input type="password" name="password"><br/>
+	<label>TypeOfUser</label>
+	<input type="radio" name="typeOfUser" value="user"/>User
+	<input type="radio" name="typeOfUser" value="admin"/>Admin
+	<br/>
 	<input type="submit" value="submit"/>
 	<input type="reset" value="reset"/>
 </form>

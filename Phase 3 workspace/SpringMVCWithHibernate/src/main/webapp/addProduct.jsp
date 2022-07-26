@@ -16,8 +16,17 @@ ${requestScope.msg}
 <input type="text" name="pname"><br/>
 <label>Price</label>
 <input type="number" name="price"><br/>
+<label>Category</label>
+<select name="category">
+	<option>-- Select Category --</option>
+	<option value="electronic device">electronic device</option>
+	<option value="cloths">cloths</option>
+</select>
+<br/>
 <input type="submit" value="Add Product">
 <input type="reset" value="reset">
 </form>
+<br/>
+<a href="index.jsp">logout</a>
 </body>
 </html>

@@ -9,6 +9,14 @@ public class Product {
 private int pid;
 private String pname;
 private float price;
+private String category;
+
+public String getCategory() {
+	return category;
+}
+public void setCategory(String category) {
+	this.category = category;
+}
 public int getPid() {
 	return pid;
 }

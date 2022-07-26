@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>Successfully login</h2>
-<a href="addProduct.jsp">Add Produt</a>
+<h2>Successfully login user</h2>
+<a href="getProduct">Get Products</a>
+<a href="getProductByCategory.jsp">Get Product by Category</a>
 </body>
 </html>

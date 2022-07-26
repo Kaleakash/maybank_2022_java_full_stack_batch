@@ -27,4 +27,12 @@ public class LoginService {
 			return "account didn't create";
 		}
 	}
+	
+	public String checkAdminLogin(Login ll) {
+			if(ll.getEmail().equals("admin@gmail.com") && ll.getPassword().equals("admin")) {
+				return "success";
+			}else {
+				return "failure";
+			}
+	}
 }

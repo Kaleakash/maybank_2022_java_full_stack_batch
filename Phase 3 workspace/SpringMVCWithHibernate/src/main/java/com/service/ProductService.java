@@ -1,5 +1,7 @@
 package com.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +20,14 @@ public class ProductService {
 		}else {
 			return "Record didn't store";
 		}
+	}
+	
+	
+	public List<Product> getAllProducts() {
+		return productDao.getAllProducts();
+	}
+	
+	public List<Product> getProductByCategory(String category){
+		return productDao.getAllProductsByCategory(category);
 	}
 }
